@@ -31,7 +31,7 @@ const questions = [
     type: 'list',
     message: 'Select a lisence for your project:',
     name: 'lisence',
-    choices: ['MIT', 'APACHE 2.0', 'GPL 3.0', 'BSD 3', 'None'],
+    choices: ['MIT', 'APACHE 2.0', 'GPL 3.0', 'Unlicensed', 'None'],
   },
   {
     type: 'input',
@@ -72,7 +72,6 @@ function init() {
   inquirer
     .prompt(questions)
     .then((data => {
-      // console.log(data);
       writeToFile('README.md', data);
     }))
 }
